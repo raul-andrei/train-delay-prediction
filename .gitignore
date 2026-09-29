@@ -216,3 +216,15 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Data and model files
+data/
+models/
+*.duckdb
+*.part
+
+# macOS and editors
+.DS_Store
+.vscode/
+.idea/
