@@ -223,6 +223,7 @@ data/
 models/
 *.duckdb
 *.part
+results/*.parquet
 
 # macOS and editors
 .DS_Store
