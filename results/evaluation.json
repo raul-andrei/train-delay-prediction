@@ -1,0 +1,77 @@
+{
+  "base_rate": 0.04262480707419898,
+  "ci_by_day": {
+    "lightgbm": {
+      "avg_precision": 0.1813673643906232,
+      "ci_low": 0.17146602172893713,
+      "ci_high": 0.19138019546410426
+    },
+    "logistic_regression": {
+      "avg_precision": 0.15688700847995107,
+      "ci_low": 0.1479531877006488,
+      "ci_high": 0.16617702961503208
+    },
+    "current_delay_rule": {
+      "avg_precision": 0.13610567777722157,
+      "ci_low": 0.12931612554854652,
+      "ci_high": 0.14250105019837217
+    },
+    "historical_frozen": {
+      "avg_precision": 0.06567306208941308,
+      "ci_low": 0.06281562427694899,
+      "ci_high": 0.06882924181141856
+    },
+    "historical_rolling": {
+      "avg_precision": 0.06124897020630833,
+      "ci_low": 0.05858573656644523,
+      "ci_high": 0.06425028339550214
+    },
+    "lightgbm_train_only": {
+      "avg_precision": 0.17992498257384512,
+      "ci_low": 0.17021522125918812,
+      "ci_high": 0.18989297951066264
+    },
+    "lightgbm - logistic_regression": {
+      "avg_precision": 0.02448035591067213,
+      "ci_low": 0.02280356800458833,
+      "ci_high": 0.02622401750483814
+    },
+    "lightgbm - current_delay_rule": {
+      "avg_precision": 0.04526168661340163,
+      "ci_low": 0.04133303742207448,
+      "ci_high": 0.04981616497764846
+    },
+    "lightgbm - historical_frozen": {
+      "avg_precision": 0.11569430230121013,
+      "ci_low": 0.10823625821934567,
+      "ci_high": 0.12294393804630667
+    },
+    "lightgbm - lightgbm_train_only": {
+      "avg_precision": 0.0014423818167780822,
+      "ci_low": 0.0010772960637831417,
+      "ci_high": 0.0017984097902497814
+    }
+  },
+  "ci_by_week": {
+    "lightgbm": {
+      "avg_precision": 0.1813673643906232,
+      "ci_low": 0.16998865848002034,
+      "ci_high": 0.19580297840186872
+    },
+    "logistic_regression": {
+      "avg_precision": 0.15688700847995107,
+      "ci_low": 0.1460937797532549,
+      "ci_high": 0.1704975044352357
+    },
+    "lightgbm - logistic_regression": {
+      "avg_precision": 0.02448035591067213,
+      "ci_low": 0.022602336773965913,
+      "ci_high": 0.026015022104739886
+    }
+  },
+  "errors": {
+    "flag_share": 0.048798949359226115,
+    "late_share_not_running": 0.6111081009954022,
+    "missed_share_not_running": 0.6756296459556392
+  }
+}
