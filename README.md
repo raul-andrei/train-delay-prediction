@@ -1,6 +1,6 @@
 # Predicting Dutch train delays one hour ahead
 
-Will an NS train arrive at its station 5+ minutes late? This project predicts it **one hour before the scheduled arrival**, using only information available at that moment, for 24 million arrivals of Intercity and Sprinter trains (Sep 2024 – Aug 2026).
+Will an NS train arrive at its station 5+ minutes late? This project predicts it **one hour before the scheduled arrival**, using only information available at that moment, for 23.7 million arrivals of Intercity and Sprinter trains (Sep 2024 – Aug 2026).
 
 On six months of unseen test data, a LightGBM model reaches an **average precision of 0.181** (95% CI 0.172–0.191), **2.8× a historical-rate baseline** (0.066) and clearly above logistic regression (0.157). The base rate is 0.043.
 
@@ -9,8 +9,8 @@ On six months of unseen test data, a LightGBM model reaches an **average precisi
 **What makes this project interesting**
 
 - **Strictly leakage-free.** Every feature is built "as of" one hour before arrival, and an automated test proves it: changing everything that happens after a cutoff must not change any feature computed before it.
-- **The hard part is real.** At prediction time, 71% of trains haven't departed yet, and they account for about 60% of all late arrivals. The model has to infer delays from the state of the network, not just read off the train's current delay.
-- **A new feature that measurably helps.** "Overdue" detects trains that should have passed a stop before T0 but haven't. Removing it costs more average precision than any hyperparameter choice.
+- **The hard part is real.** At prediction time, 72% of trains haven't departed yet, and they account for about 60% of all late arrivals. The model has to infer delays from the state of the network, not just read off the train's current delay.
+- **A new feature that measurably helps.** "Overdue" detects trains that should have passed a stop before T0 but haven't. Removing it lowers validation average precision from 0.241 to 0.232, a bigger effect than any hyperparameter choice.
 - **Honest evaluation.** Time-based split, baselines, a test set scored once, day-level bootstrap confidence intervals, calibration, and error analysis by segment.
 
 ---
@@ -86,7 +86,7 @@ Test set, March–August 2026. 95% intervals from a bootstrap over days (500 res
 | Logistic regression | 0.157 | 0.148–0.166 | 0.687 | 0.0386 |
 | **LightGBM** | **0.181** | **0.172–0.191** | **0.710** | **0.0379** |
 
-Average precision is the main metric because only 4.3% of arrivals are late: always predicting "on time" is 96% accurate and useless. The paired bootstrap gives LightGBM − logistic regression = **+0.025 (95% CI +0.023 to +0.026)**.
+Average precision is the main metric because only 4.3% of arrivals are late: always predicting "on time" is 96% accurate and useless. The paired bootstrap gives LightGBM − logistic regression = **+0.024 (95% CI +0.023 to +0.026)**.
 
 **Ablation (validation):**
 
